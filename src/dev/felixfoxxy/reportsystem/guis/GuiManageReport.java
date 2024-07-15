@@ -74,8 +74,22 @@ public class GuiManageReport {
 		
 		inv.setItem(15, GuiUtils.GetFillerItem());
 		
+		String state = "";
+		
+		switch(rep.State) {
+			case FREE:
+				state = ReportSystem.getInstance().lang.getProperty("GuiFree");
+				break;
+			case CLAIMED:
+				state = ReportSystem.getInstance().lang.getProperty("GuiClaimed");
+				break;
+			case COMPLETED:
+				state = ReportSystem.getInstance().lang.getProperty("GuiCompleted");
+				break;
+		}
+		
 		List<String> lore = new ArrayList<String>();
-		lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropState") + rep.State.toString().toUpperCase());
+		lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropState") + state);
 		lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropCreator") + Bukkit.getServer().getOfflinePlayer(rep.Player).getName());
 		lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropDate") + rep.Timestamp.split("_")[0]);
 		lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropTime") + rep.Timestamp.split("_")[1]);
