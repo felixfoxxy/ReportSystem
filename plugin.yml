@@ -1,0 +1,9 @@
+name: ReportSystem
+main: dev.felixfoxxy.reportsystem.ReportSystem
+author: FelixFoxxy
+version: 1.0
+api-version: '1.21'
+commands:
+  report:
+  reports:
+  reportsystem:
