@@ -41,8 +41,15 @@ public class ReportSystem extends JavaPlugin{
 				properties.setProperty("InfoPermission", "reportsystem.info");
 				properties.setProperty("HelpPermission", "reportsystem.help");
 				properties.setProperty("ReloadPermission", "reportsystem.reload");
+				properties.setProperty("FreePermission", "reportsystem.report.free");
+				properties.setProperty("ClaimPermission", "reportsystem.report.claim");
+				properties.setProperty("CompletePermission", "reportsystem.report.complete");
+				properties.setProperty("BanPermission", "reportsystem.report.ban");
+				properties.setProperty("DeletePermission", "reportsystem.report.delete");
+				properties.setProperty("ManagePermission", "reportsystem.report.manage");
+				properties.setProperty("CompleteReportOnBan", "true");
 				properties.setProperty("TimestampFormat", "yyyy-MM-dd_HH-mm-ss");
-				//ReportSystem.getInstance().lang.getProperty("")
+				//ReportSystem.getInstance().properties.getProperty("")
 				properties.store(new FileOutputStream(ConfigPath), null);
 			}
 			properties.load(new FileInputStream(ConfigPath));
@@ -73,7 +80,7 @@ public class ReportSystem extends JavaPlugin{
 				lang.setProperty("ReportDeleted", "&4Report Deleted!");
 				lang.setProperty("ExceptionDelete", "&4Report Deleted!");
 				lang.setProperty("ExceptionSetState", "&4Error changing Report state(Check Console)!");
-				lang.setProperty("BanMessage", "\n\n%PREFIX%\n&cYou have been banned!\n&cReason: %REASON%\n&5Banned by: &6%BANBY% &8(&6%BANBYUUID%&8)\n&aReport ID:%REPORTID%\n&0                                                                                                                                                                                                      &0");
+				lang.setProperty("BanMessage", "\n\n%PREFIX%\n&cYou have been banned!\n&cReason: %REASON%\n&5Banned by: &6%BANBY% &8(&6%BANBYUUID%&8)\n&aReport ID: %REPORTID%\n&0                                                                                                                                                                                                      &0");
 				lang.setProperty("HelpMessage", "&6Usage:\n&2/report [PLAYER] [REASON] -- Report a Player\n/reports -- Shows all Reports\n/reportsystem -- Shows Plugin Info\n/reportsystem info -- Shows Plugin Info\n/reportsystem help -- Shows Help Message\n/reportsystem reload -- Reloads the Plugin");
 				lang.setProperty("ReloadMessage", "&aConfigs reloaded!");
 				lang.setProperty("GuiReportsTitle", "&4Reports &8/ &2");
@@ -92,6 +99,12 @@ public class ReportSystem extends JavaPlugin{
 				lang.setProperty("GuiPropTime", "&2Time: ");
 				lang.setProperty("GuiPropReason", "&9Reason: ");
 				lang.setProperty("GuiPropFile", "&cFile: ");
+				lang.setProperty("DeletePermission", "&cYou need the Permission \"reportsystem.report.delete\" to delete Reports!");
+				lang.setProperty("BanPermission", "&cYou need the Permission \"reportsystem.report.ban\" to ban Players!");
+				lang.setProperty("CompletePermission", "&cYou need the Permission \"reportsystem.report.complete\" to complete Reports!");
+				lang.setProperty("ClaimPermission", "&cYou need the Permission \"reportsystem.report.claim\" to claim Reports!");
+				lang.setProperty("FreePermission", "&cYou need the Permission \"reportsystem.report.free\" to free Reports!");
+				lang.setProperty("ManagePermission", "&cYou need the Permission \"reportsystem.report.manage\" to free Reports!");
 				lang.store(new FileOutputStream(properties.getProperty("LangPath")), null);
 			}
 			lang.load(new FileInputStream(properties.getProperty("LangPath")));
