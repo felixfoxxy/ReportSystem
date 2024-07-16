@@ -8,11 +8,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class GuiUtils {
 	public static String getInfo() {
 		String ret = "";
-		ret += "&5=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n";
-		ret += "&aPlugin: ReportSystem\n";
-		ret += "&6Author: FelixFoxx\n";
-		ret += "&9Website: https://felixfoxxy.dev/\n";
-		ret += "&5=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n";
+		ret += "&5=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=&r\n";
+		ret += "&aPlugin: ReportSystem&r\n";
+		ret += "&6Author: FelixFoxxy&r\n";
+		ret += "&9Website: https://felixfoxxy.dev/&r\n";
+		ret += "&5=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=&r";
 		return ChatColor.translateAlternateColorCodes('&', ret);
 	}
 	

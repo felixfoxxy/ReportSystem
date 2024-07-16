@@ -96,7 +96,6 @@ public class ReportSystem extends JavaPlugin{
 			}
 			lang.load(new FileInputStream(properties.getProperty("LangPath")));
 			for (Map.Entry<Object, Object> entry : lang.entrySet()) {
-				Bukkit.getConsoleSender().sendMessage((String)entry.getKey() + " --- " + (String)entry.getValue());
 				lang.setProperty((String)entry.getKey(), ChatColor.translateAlternateColorCodes('&', (String)entry.getValue()));
 			}
 		} catch (IOException e) {
