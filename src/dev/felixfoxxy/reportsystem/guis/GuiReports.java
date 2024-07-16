@@ -54,6 +54,8 @@ public class GuiReports {
 		File[] reportFiles = new File(ReportSystem.getInstance().properties.getProperty("ReportsPath")).listFiles();
 		if(reportFiles != null) {
 			for(int i = (9 * 4) * pid; i < (9 * 4) * pid + (9 * 4); i++) {
+				if(!(i <= reportFiles.length -1))
+					break;
 				try {
 					File f = reportFiles[i];
 					Report rep = new Gson().fromJson(FileUtils.readFromInputStream(new FileInputStream(f)), Report.class);

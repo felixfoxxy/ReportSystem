@@ -46,13 +46,16 @@ public class EventGuiClick implements Listener{
 	}
 	
 	void GuiReports(InventoryClickEvent e) {
+		if(e.getCurrentItem() == null)
+			return;
+		
 		Player p = (Player) e.getWhoClicked();
 		String itmName = e.getCurrentItem().getItemMeta().getDisplayName().trim();
 		
 		if(itmName.substring(2) != "" && Bukkit.getServer().getPlayer(itmName.substring(2)) != null) {
 			p.closeInventory();
 			for(String l : e.getCurrentItem().getItemMeta().getLore()) {
-				if(l.split(" ")[1].trim().endsWith(".json")) {
+				if(l.replace(ReportSystem.getInstance().lang.getProperty("GuiPropFile"), "").trim().endsWith(".json")) {
 					try {
 						Report rep = new Gson().fromJson(FileUtils.readFromInputStream(new FileInputStream(ReportSystem.getInstance().properties.getProperty("ReportsPath") + l.split(" ")[1].substring(2).trim())), Report.class);
 						p.closeInventory();
