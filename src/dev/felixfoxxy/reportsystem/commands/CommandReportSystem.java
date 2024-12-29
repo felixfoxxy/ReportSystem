@@ -16,10 +16,6 @@ public class CommandReportSystem implements CommandExecutor{
 		if(args.length == 1) {
 			switch(args[0].toLowerCase()) {
 				case "info":
-					if(!p.hasPermission(ReportSystem.getInstance().properties.getProperty("InfoPermission"))) {
-						p.sendMessage(ReportSystem.getInstance().lang.getProperty("Prefix") + ReportSystem.getInstance().lang.getProperty("InfoPermission"));
-						return false;
-					}
 					p.sendMessage(GuiUtils.getInfo());
 					break;
 				case "help":
