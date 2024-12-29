@@ -84,7 +84,7 @@ public class GuiReports {
 					
 					List<String> lore = new ArrayList<String>();
 					lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropState") + state);
-					lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropCreator") + Bukkit.getServer().getOfflinePlayer(rep.Player).getName() + spc);
+					lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropCreator") + Bukkit.getServer().getOfflinePlayer(rep.Creator).getName() + spc);
 					lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropDate") + rep.Timestamp.split("_")[0]);
 					lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropTime") + rep.Timestamp.split("_")[1]);
 					lore.add(ReportSystem.getInstance().lang.getProperty("GuiPropReason") + rep.Reason);
